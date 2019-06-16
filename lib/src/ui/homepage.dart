@@ -86,7 +86,7 @@ _showDialog(BuildContext context, TodoBloc bloc) async {
                 child: const Text('SAVE'),
                 onPressed: () {
                   if (_controller.text != '') {
-                    bloc.todoEventSink.add(
+                    bloc.dispatch(
                       AddTodoEvent(
                         todo: Todo(title: '${_controller.text.toString()}'),
                       ),
